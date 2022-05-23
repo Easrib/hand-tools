@@ -8,7 +8,6 @@ const Footer = () => {
             <p> All rights reserved by &copy; Hand Tools || {year} </p>
             <p><small>Crafted with <span className='text-danger'>&hearts;</span> by Sharik</small></p>
         </div>
-
     );
 };
 
