@@ -1,0 +1,26 @@
+[
+    {
+        "_id": 1,
+        "feedback": "A popular choice for its ergonomic, comfortable design and the value it delivers for the price, this tool strips and crimps wire of a range of sizes spanning the most common gauge numbers.",
+        "img": "https://i.ibb.co/jhmmK36/customer6.jpg",
+        "name": "Rahim Mia",
+        "town": "Chittagong",
+        "ratings": 5
+    },
+    {
+        "_id": 2,
+        "feedback": "Considering the relatively low price, this wire stripper delivers surprising versatility, with its ability to strip, cut, and crimp.",
+        "img": "https://i.ibb.co/59sxNcX/customer5.png",
+        "name": "Abdul Karim",
+        "town": "Barishal",
+        "ratings": 4.5
+    },
+    {
+        "_id": 3,
+        "feedback": "This forged steel wire stripper delivers the quality and performance you expect from Klein Tools, along with versatile, handy capabilities, like screw and bolt shearing.",
+        "img": "https://i.ibb.co/Qn6MK5Z/customer4.jpg",
+        "name": "Abul Kalam",
+        "town": "Dhaka",
+        "ratings": 5
+    }
+]
