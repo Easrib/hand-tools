@@ -12,7 +12,7 @@ const Reviews = () => {
     }
     return (
         <div className='mb-4'>
-            <div className='mt-6'>
+            <div className='mt-6 text-center'>
                 <h3 className='text-primary font-bold '>Reviews</h3>
                 <h2 >What Our Customer Says</h2>
             </div>

@@ -1,0 +1,74 @@
+[
+    {
+        "_id": 1,
+        "name": "Spanner Set",
+        "image": "https://i.ibb.co/w70SXKS/carpentry-tools.jpg",
+        "description": "We are counted among the renowned manufacturers, exporters and whole sellers of precision engineered MetalSpanners. We assure that the entire gamut of spanners is manufactured at our advance manufacturing unit under the supervision of our qualified professionals. ",
+        "moq": 50,
+        "stock": 898,
+        "price": 65
+    },
+    {
+        "_id": 2,
+        "name": "Steel",
+        "image": "https://i.ibb.co/Y2wXpD1/clampsandhacksaws.jpg",
+        "description": "We are manufacturing Steel Files with most respected symbols of quality and reliability. The result of technical competence, dedicated workforce and stringent quality controls. Special emphasis is given on heat treatment to attain the desired standards of hardness.",
+        "moq": 500,
+        "stock": 20000,
+        "price": 15
+    },
+    {
+        "_id": 3,
+        "name": "Metal Pliers",
+        "image": "https://i.ibb.co/qxPtk5J/mason-tools.jpg",
+        "description": "Backed by the team of knowledgeable professionals, we are manufacturing, exporting and supplying an all-inclusive range of Metal Pliers to our valuable clients. These pliers are available in various dimensions & sizes for meeting the different purposes of the clients. We make these available according to the clients defined specifications & make prompt deliveries within the agreed time - frame",
+        "moq": 150,
+        "stock": 3500,
+        "price": 60
+    },
+    {
+        "_id": 4,
+        "name": "Swivel Base Bench Vice",
+        "image": "https://i.ibb.co/XZ3SxMB/metal-wrenches.jpg",
+        "description": "We are among the well-known manufacturers and suppliers of excellent quality range of Swivel Base Bench Vice. Our professionals possess expertise in manufacturing and supervise each and every manufacturing step, precisely. They make use of high-grade raw material that is procured from reputed vendors in the market. Our customers can avail these vices from us, at affordable prices.",
+        "moq": 50,
+        "stock": 1200,
+        "price": 150
+    },
+    {
+        "_id": 5,
+        "name": "Carpentry Tools",
+        "image": "https://i.ibb.co/WD6Fpzj/pliers.jpg",
+        "description": "In our wide range of products, we are also offering our clients a supreme grade range of Carpentry Tools. These Carpentry Tools are manufactured at our state-of- art manufacturing unit, using superior quality raw material and cutting-edge technology. Our offered tools find wide application in diverse industries and appreciated for their performance and finish. In order to match the international quality standard, these products are rigorously checked by our expert quality controller at our end, in ahead of their final delivery. Customers can avail them at market leading prices.",
+        "moq": 80,
+        "stock": 890,
+        "price": 75
+    },
+    {
+        "_id": 6,
+        "name": "Mason Tools",
+        "image": "https://i.ibb.co/9sjRxRK/spanner-set.jpg",
+        "description": "We introduce ourselves as an eminent manufacturer, exporter and suppliers of Mason Tools. These uniquely designed in compliance with international quality standards, using optimum quality material procured from reliable vendors of the market. Further, we provide these products in a diverse range of unique patterns that can be modified in accordance with client-specific needs. Moreover, we provide entire range to our esteemed clients at market leading prices.",
+        "moq": 200,
+        "stock": 2800,
+        "price": 35
+    },
+    {
+        "_id": 7,
+        "name": "Metal Wrenches",
+        "image": "https://i.ibb.co/Xb8Jj6c/steel.jpg",
+        "description": "Since our inception, we are instrumental in offering premium quality Metal Wrenches. Our offered products are highly demanded in the market for their compact design and durability. These products are manufactured using fine grade raw material and progressive techniques in adherence to set industrial norms. Moreover, the products offered by us can also be availed in various customized options as per the different requirements of our precious clients.",
+        "moq": 165,
+        "stock": 1800,
+        "price": 40
+    },
+    {
+        "_id": 8,
+        "name": "Clamps & Hacksaws",
+        "image": "https://i.ibb.co/gDVgQFM/steel-vices.jpg",
+        "description": "Owing to our rich industry experience, we are offering a wide range of Clamps & Hacksaws. Widely known for providing trouble free performance and easy operations, these products are manufactured in compliance with international quality standards. Further, our professionals make use of high grade raw material and latest technology to manufacture them. Deigned keeping in mind the requirement of the customers, these products are offered at rock bottom prices.",
+        "moq": 260,
+        "stock": 1600,
+        "price": 45
+    }
+]

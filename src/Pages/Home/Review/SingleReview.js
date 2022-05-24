@@ -1,13 +1,18 @@
 import React from 'react';
 
-const SingleReview = () => {
+const SingleReview = ({ review }) => {
+
+    const { feedback, img, ratings, town, name } = review;
     return (
-        <div class="col">
+        <div class="col p-4">
             <div class="card h-100">
-                <img src="..." class="card-img-top" alt="..." />
+                <img src={img} className="card-img-top mt-2 rounded-circle mx-auto" style={{ width: '200px', height: '200px' }} alt="..." />
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small>{feedback}</small></p>
+                    <p>Ratings: {ratings}</p>
+                    <h4 class="card-title">{name}</h4>
+                    <h5>{town}</h5>
+
                 </div>
             </div>
         </div>
