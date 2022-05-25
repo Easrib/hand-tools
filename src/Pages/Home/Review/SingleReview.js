@@ -4,16 +4,17 @@ const SingleReview = ({ review }) => {
 
     const { feedback, img, ratings, town, name } = review;
     return (
-        <div class="col p-4">
-            <div class="card h-100">
-                <img src={img} className="card-img-top mt-2 rounded-circle mx-auto" style={{ width: '200px', height: '200px' }} alt="..." />
-                <div class="card-body">
-                    <p class="card-text"><small>{feedback}</small></p>
-                    <p>Ratings: {ratings}</p>
-                    <h4 class="card-title">{name}</h4>
-                    <h5>{town}</h5>
-
+        <div class="card max-w-lg bg-base-100 shadow-xl">
+            <div class="avatar mx-auto my-5">
+                <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <img src={img} alt="people" />
                 </div>
+            </div>
+            <div class="card-body items-center text-center">
+                <p><small>{feedback}</small></p>
+                <p><span className='text-lg'>Ratings</span>: {ratings}</p>
+                <h2 class="card-title">{name}</h2>
+                <p>{town}</p>
             </div>
         </div>
     );

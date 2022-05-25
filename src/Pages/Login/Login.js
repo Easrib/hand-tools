@@ -38,19 +38,19 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
     }
     return (
-        <div className='d-flex h-100 my-4 justify-content-center align-items-center'>
-            <div className="card w-50">
+        <div className='flex h-screen  justify-center items-center'>
+            <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="card-title text-center font-bold">Login</h2>
+                    <h2 className="card-title text-2xl text-center font-bold mx-auto">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-control">
+                        <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input
                                 type="email"
                                 placeholder="Please type your email"
-                                className="form-control form-control-lg"
+                                className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -67,14 +67,14 @@ const Login = () => {
 
                             </label>
                         </div>
-                        <div className="form-control">
+                        <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
                             <input
                                 type="password"
                                 placeholder="Please type your password"
-                                className="form-control form-control-lg"
+                                className="input input-bordered w-full max-w-xs"
                                 {...register("password", {
                                     required: {
                                         value: true,
@@ -92,15 +92,11 @@ const Login = () => {
                             </label>
                         </div>
                         {signInError}
-                        <input className='btn btn-primary d-block mx-auto w-50 my-2' value="Login" type="submit" />
+                        <input className='btn w-full max-w-xs' value="Login" type="submit" />
                     </form>
-                    <p className='text-center'><small>New to Doctors Portal? <Link className='text-primary' to='/signup'>Create a new account.</Link></small></p>
-                    <div className='d-flex align-items-center'>
-                        <div style={{ height: '1px' }} className='bg-primary w-50'></div>
-                        <p className='p-2 mt-2 px-2 '>Or</p>
-                        <div style={{ height: '1px' }} className='bg-primary w-50'></div>
-                    </div>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-primary d-block mx-auto w-50 ">Continue with google</button>
+                    <p><small>New to Doctors Portal? <Link className='text-primary' to='/signup'>Create a new account.</Link></small></p>
+                    <div className="divider">OR</div>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-accent">COntinue with google</button>
                 </div>
             </div>
         </div>

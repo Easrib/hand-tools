@@ -9,17 +9,17 @@ const SingleTools = ({ tool }) => {
         navigate(`/purchase/${id}`)
     }
     return (
-        <div class="col p-4">
-            <div class="card h-100">
-                <img src={image} className="card-img-top mt-2 mx-auto" style={{ width: '200px', height: '200px' }} alt="..." />
-                <div class="card-body">
-                    <h4 class="card-title">{name}</h4>
-                    <p class="card-text"><small>{description}</small></p>
-                    <p>MOQ: {moq}</p>
-                    <p>Stock: {stock}</p>
-                    <p>Price: {price}</p>
-                </div>
-                <div class="card-footer">
+        <div class="card max-w-lg bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+                <img src={image} alt="tools" class="rounded-xl" style={{ width: '200px', height: '200px' }} />
+            </figure>
+            <div class="card-body items-center text-center">
+                <h2 class="card-title">{name}</h2>
+                <p><small>{description}</small></p>
+                <p>MOQ: {moq}</p>
+                <p>Stock: {stock}</p>
+                <p>Price: {price}</p>
+                <div class="card-actions">
                     <button onClick={() => handlePurchase(_id)} className='btn btn-primary w-100'>Buy Now</button>
                 </div>
             </div>

@@ -10,7 +10,7 @@ import Header from './Pages/Shared/Header/Header';
 
 function App() {
   return (
-    <div className="container">
+    <div className='max-w-7xl mx-auto px-12'>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
