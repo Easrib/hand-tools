@@ -8,6 +8,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Signup from './Pages/Login/Signup';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
@@ -37,6 +38,7 @@ function App() {
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
+        <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
