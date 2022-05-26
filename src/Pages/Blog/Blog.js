@@ -5,16 +5,16 @@ const Blog = () => {
         <div className='my-2'>
             <h2 className='text-2xl text-primary text-center my-3'>Hand Tools Blog</h2>
             <h4 className='text-2xl font-bold'>Q1: How will you improve the performance of a React Application?</h4>
-            <p className='mb-2 ml-4'>Answer:
+            <div className='mb-2 ml-4'>Answer:
                 <ul>
-                    <li>1. Use the Production Build</li>
+                    <li>1. Use the divroduction Build</li>
                     <li>2. Virtualize Long Lists</li>
                     <li>3. Avoid Reconciliation</li>
                     <li>4. Keeping component state local where necessary.</li>
                     <li>5. Code-splitting in React using dynamic import()</li>
-                </ul></p>
+                </ul></div>
             <h4 className='text-2xl font-bold'>Q2: What are the different ways to manage a state in a React application? </h4>
-            <p className='mb-2 ml-4'>Answer: There are four types of state we need to manage at react application
+            <div className='mb-2 ml-4'>Answer: There are four types of state we need to manage at react application
                 <ol>
                     <li>1. Local state is data we manage in one or another component.Local state is most often managed in React using the useState
                         hook.</li>
@@ -22,8 +22,7 @@ const Blog = () => {
                     <li>3. Data that comes from an external server that must be integrated with our UI state.Server state is a simple concept, but can be hard to manage alongside all of our local and global UI state.Fortunately there are tools such as SWR and React Query that make managing server state much easier.</li>
                     <li>4. Data that exists on our URLs, including the pathname and query parameters.URL state is often missing as a category of state, but it is an important one.In many cases, a lot of major parts of our application rely upon accessing URL state. Try to imagine building a blog without being able to fetch a post based off of its slug or id that is located in the URL!</li>
                 </ol>
-
-            </p>
+            </div>
             <h4 className='text-2xl font-bold'>Q3: How does prototypical inheritance work? </h4>
             <p className='mb-2 mr-4'>Answer: The core idea of Prototypal Inheritance is that an object can point to another object and inherit all its properties. The main purpose is to allow multiple instances of an object to share common properties, hence, the Singleton Pattern.
             </p>

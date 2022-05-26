@@ -5,13 +5,14 @@ import Loading from '../Shared/Loading/Loading';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init'
+import { toast } from 'react-toastify';
 
 
 const Purchase = () => {
     const [disable, setDisable] = useState(false)
     const { id } = useParams();
     const [user] = useAuthState(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm({ mode: "onChange" });
+    const { register, formState: { errors }, handleSubmit, reset } = useForm({ mode: "onChange" });
 
     const { data: purchase, isLoading } = useQuery('tools', () => fetch(`http://localhost:5000/purchase/${id}`).then(res => res.json()))
 
@@ -20,12 +21,34 @@ const Purchase = () => {
         return <Loading></Loading>
     }
     const onSubmit = data => {
-        console.log(data);
+        const order = {
+            item: purchase.name,
+            user: user.displayName,
+            phone: data.phone,
+            quantity: data.quantity,
+            address: data.address
+        }
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success('Order added successfully')
+                    reset()
+                }
+                else {
+                    toast.error('Failed to added order')
+                }
+            })
     }
     const handleRefresh = event => {
         event.preventDefault()
         const qty = event.target.value
-        console.log(qty);
         if (qty < purchase.moq || qty > purchase.stock) {
             setDisable(true)
         }
@@ -64,13 +87,21 @@ const Purchase = () => {
                     <label className="label">
                         <span className="label-text text-lg">Address</span>
                     </label>
-                    <input type="text" className="input input-bordered w-full max-w-xs" />
+                    <input
+                        type="text"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("address")}
+                    />
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text text-lg">Phone Number</span>
                     </label>
-                    <input type="text" className="input input-bordered w-full max-w-xs" />
+                    <input
+                        type="text"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("phone")}
+                    />
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
@@ -88,7 +119,8 @@ const Purchase = () => {
                     <label className="label">
                         <span className="label-text text-lg">Unit Price</span>
                     </label>
-                    <input type="number" value={purchase?.price} className="input input-bordered w-full max-w-xs" disabled />
+                    <input
+                        type="number" value={purchase?.price} className="input input-bordered w-full max-w-xs" disabled />
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
@@ -99,7 +131,7 @@ const Purchase = () => {
                         defaultValue={purchase.moq}
                         className="input input-bordered w-full max-w-xs"
                         id='qty'
-                        {...register("moq", {
+                        {...register("quantity", {
                             required: {
                                 value: true,
                                 message: 'Order quantity is required'
@@ -114,11 +146,11 @@ const Purchase = () => {
                             }
                         })} />
                     <label className="label">
-                        {errors.moq?.type === 'required' && <>
-                            <span className="label-text-alt text-red-400">{errors.moq?.message}</span>
+                        {errors.quantity?.type === 'required' && <>
+                            <span className="label-text-alt text-red-400">{errors.quantity?.message}</span>
                         </>}
-                        {errors.moq?.type === 'max' && <span className="label-text-alt text-red-400">{errors.moq?.message}</span>}
-                        {errors.moq?.type === 'min' && <span className="label-text-alt text-red-400">{errors.moq?.message}</span>}
+                        {errors.quantity?.type === 'max' && <span className="label-text-alt text-red-400">{errors.quantity?.message}</span>}
+                        {errors.quantity?.type === 'min' && <span className="label-text-alt text-red-400">{errors.quantity?.message}</span>}
 
                     </label>
                 </div>
