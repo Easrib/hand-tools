@@ -2,6 +2,7 @@ import React from 'react';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const AddReview = () => {
     const [user] = useAuthState(auth);
@@ -29,6 +30,23 @@ const AddReview = () => {
                         ratings: data.ratings,
                         town: data.town
                     }
+                    fetch('http://localhost:5000/review', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(review)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.insertedId) {
+                                toast('review added successfully')
+                                reset()
+                            }
+                            else {
+                                toast.error('Failed to added review')
+                            }
+                        })
                 }
             })
     }

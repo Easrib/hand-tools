@@ -4,6 +4,8 @@ import Blog from './Pages/Blog/Blog';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login';
@@ -43,6 +45,7 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
