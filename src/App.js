@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Blog from './Pages/Blog/Blog';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
@@ -39,6 +40,7 @@ function App() {
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

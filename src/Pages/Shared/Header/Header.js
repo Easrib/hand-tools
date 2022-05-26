@@ -10,10 +10,9 @@ const Header = () => {
         signOut(auth);
     }
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
         <li><Link to='/about'>About</Link></li>
         <li><Link to='/portfolio'>Portfolio</Link></li>
-        <li><Link to='/contact'>Contact</Link></li>
+        <li><Link to='/blog'>Blog</Link></li>
         {
             user && <li><Link to='/dashboard'>Dashboard</Link></li>
         }
@@ -23,7 +22,7 @@ const Header = () => {
         </> : <li><Link to='/login'>Log in</Link></li>}
     </>
     return (
-        <div class="navbar bg-base-100">
+        <div class="navbar bg-slate-300">
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
