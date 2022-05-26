@@ -38,7 +38,7 @@ const Purchase = () => {
 
     return (
         <div className='my-4'>
-            <form  onSubmit={handleSubmit(onSubmit)} onChange={handleRefresh}>
+            <form onSubmit={handleSubmit(onSubmit)} onChange={handleRefresh} className='grid grid-cols-1 gap-2 mt-2 justify-items-center'>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text text-lg">Item Name</span>

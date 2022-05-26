@@ -33,7 +33,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a class="btn btn-ghost normal-case text-xl">Hand Tools</a>
+                <a href='home#home' class="btn btn-ghost normal-case text-xl">Hand Tools</a>
             </div>
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
