@@ -24,7 +24,7 @@ const AddReview = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const review = {
-                        name: data.name,
+                        name: user.displayName,
                         feedback: data.feedback,
                         img: img,
                         ratings: data.ratings,
