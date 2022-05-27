@@ -24,9 +24,11 @@ const Purchase = () => {
         const order = {
             item: purchase.name,
             user: user.displayName,
+            email: user.email,
             phone: data.phone,
             quantity: data.quantity,
-            address: data.address
+            address: data.address,
+            price: purchase.price
         }
         fetch('http://localhost:5000/order', {
             method: 'POST',
@@ -78,7 +80,7 @@ const Purchase = () => {
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
-                        <span className="label-text text-lg">User Name</span>
+                        <span className="label-text text-lg">User Email</span>
                     </label>
                     <input type="email" value={user?.email} className="input input-bordered w-full max-w-xs" disabled />
 
@@ -120,7 +122,9 @@ const Purchase = () => {
                         <span className="label-text text-lg">Unit Price</span>
                     </label>
                     <input
-                        type="number" value={purchase?.price} className="input input-bordered w-full max-w-xs" disabled />
+                        type="number"
+                        value={purchase?.price}
+                        className="input input-bordered w-full max-w-xs" disabled />
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">

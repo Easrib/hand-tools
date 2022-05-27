@@ -5,7 +5,7 @@ import SingleReview from './SingleReview';
 
 const Reviews = () => {
     const { data: reviews, isLoading } = useQuery('reviews', () => fetch("http://localhost:5000/review").then(res => res.json()))
-    console.log("jquery", reviews);
+
 
     if (isLoading) {
         return <Loading></Loading>

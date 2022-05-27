@@ -39,32 +39,10 @@ const Header = () => {
                     {menuItems}
                 </ul>
             </div>
+            <div>
+                <label for="myDashboard" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+            </div>
         </div>
-        // <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        //     <Container className='text-primary'>
-        //         <Navbar.Brand href="home#home">Hand Tools</Navbar.Brand>
-        //         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        //         <Navbar.Collapse id="responsive-navbar-nav">
-        //             <Nav className="me-auto">
-        //                 <Nav.Link as={Link} to='/purchase'>Purchase</Nav.Link>
-        //                 <Nav.Link href="#pricing">Pricing</Nav.Link>
-        //             </Nav>
-        //             <Nav>
-        //                 <Nav.Link href="#deets">More deets</Nav.Link>
-        //                 {
-        //                     user
-        //                         ?
-        //                         <>
-        //                             <p className='my-auto me-2'>{user.displayName}</p>
-        //                             <button className='btn btn-danger' onClick={() => handleSignout()}>Sign Out</button>
-        //                         </>
-        //                         :
-        //                         <Nav.Link as={Link} to='/login'>Login</Nav.Link>
-        //                 }
-        //             </Nav>
-        //         </Navbar.Collapse>
-        //     </Container>
-        // </Navbar>
     );
 };
 
