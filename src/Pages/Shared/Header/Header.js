@@ -8,6 +8,7 @@ const Header = () => {
     const [user] = useAuthState(auth);
     const handleSignout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken')
     }
     const menuItems = <>
         <li><Link to='/about'>About</Link></li>
