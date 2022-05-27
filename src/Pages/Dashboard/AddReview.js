@@ -89,7 +89,7 @@ const AddReview = () => {
                     <label class="label">
                         <span className="label-text text-lg">Upload your Image</span>
                     </label>
-                    <input {...register("image")} type="file" placeholder='Write your phone number' class="input input-bordered w-full max-w-xs" />
+                    <input {...register("image")} type="file" placeholder='Upload your image' class="input input-bordered w-full max-w-xs" />
                 </div>
                 <input className='btn w-full max-w-xs' value="Submit" type="submit" />
             </form>
