@@ -27,8 +27,8 @@ const Payment = () => {
             <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12">
                 <div class="card-body">
                     <p className="text-success font-bold">Hello, {orderPayment?.user}</p>
-                    <h2 class="card-title">Please Pay for {orderPayment?.item}</h2>
-
+                    <h2 class="card-title">Please Pay for <span className='text-orange-600'>{orderPayment?.item}</span></h2>
+                    <p>Order Quantity: {orderPayment?.quantity} set</p>
                     <p>Please pay: ${orderPayment?.price * parseInt(orderPayment?.quantity)}</p>
                 </div>
             </div>
