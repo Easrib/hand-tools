@@ -3,11 +3,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import ConfirmDeleteModal from './ConfirmDeleteModal';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
+    const [deletingOrder, setDeletingOrder] = useState(null);
 
     useEffect(() => {
         if (user) {
@@ -18,7 +20,6 @@ const MyOrders = () => {
                 }
             })
                 .then(res => {
-                    console.log('res', res);
                     if (res.status === 401 || res.status === 403) {
                         navigate('/home')
                         signOut(auth);
@@ -28,10 +29,8 @@ const MyOrders = () => {
                 })
                 .then(data => setOrders(data))
         }
-    }, [user])
-    const handleCancel = ()=>{
-        
-    }
+    }, [user, deletingOrder])
+
     return (
         <div>
             <h2 className='text-2xl text-primary text-center my-3'>My Orders</h2>
@@ -63,17 +62,25 @@ const MyOrders = () => {
                                             <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
                                         </div>}
                                     </td>
-                                    <td>{(order.price && !order.paid) && <button onClick={handleCancel} className='btn btn-xs btn-success'>Cancel</button>}
+                                    <td>{(order.price && !order.paid) && <label for="delete-confirm-modal"
+                                        className='btn btn-xs btn-success'
+                                        onClick={() => setDeletingOrder(order)}>Cancel</label>
+                                    }
                                         {(order.price && order.paid) && <div>
                                             <p><span className='text-success'>Cancel</span></p>
                                         </div>}
                                     </td>
+                                    {deletingOrder && <ConfirmDeleteModal
+                                        deletingOrder={deletingOrder}
+                                        setDeletingOrder={setDeletingOrder}
+                                        order={order}></ConfirmDeleteModal>}
                                 </tr>
                             )
                         }
                     </tbody>
                 </table>
             </div>
+
         </div>
     );
 };
