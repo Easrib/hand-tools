@@ -1,3 +1,15 @@
+
+# "Hand Tools" is a website for tools manufacturing company
+
+This website is live at [Hand Tools](https://hand-tools-ceb4f.web.app/).
+# Website Features & Functionality
+
+* Website server is deployed at Heroku.
+* Firebase authentication system enabled
+* JWT enabled
+* different dashboard for Admin & user
+* Payment procedure added
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

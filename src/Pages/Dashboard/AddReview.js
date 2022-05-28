@@ -30,7 +30,7 @@ const AddReview = () => {
                         ratings: data.ratings,
                         town: data.town
                     }
-                    fetch('http://localhost:5000/review', {
+                    fetch('https://arcane-cove-12898.herokuapp.com/review', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

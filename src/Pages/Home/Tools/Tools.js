@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading/Loading';
 import SingleTools from './SingleTools';
 
 const Tools = () => {
-    const { data: tools, isLoading } = useQuery('tools', () => fetch("http://localhost:5000/purchase").then(res => res.json()))
+    const { data: tools, isLoading } = useQuery('tools', () => fetch("https://arcane-cove-12898.herokuapp.com/purchase").then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

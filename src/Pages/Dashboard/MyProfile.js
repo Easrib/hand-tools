@@ -15,7 +15,7 @@ const MyProfile = () => {
             location: event.target.location.value,
             linkedIn: event.target.linkedin.value
         }
-        const url = `http://localhost:5000/profile/${user.email}`;
+        const url = `https://arcane-cove-12898.herokuapp.com/profile/${user.email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

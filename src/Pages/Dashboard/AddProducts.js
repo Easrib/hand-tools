@@ -31,7 +31,7 @@ const AddProducts = () => {
                         stock: data.stock,
                         price: data.price
                     }
-                    fetch('http://localhost:5000/purchase', {
+                    fetch('https://arcane-cove-12898.herokuapp.com/purchase', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

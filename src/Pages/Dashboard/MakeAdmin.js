@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 import ProfilesRow from './ProfilesRow';
 
 const MakeAdmin = () => {
-    const { data: profiles, isLoading, refetch } = useQuery('allProfile', () => fetch('http://localhost:5000/profile', {
+    const { data: profiles, isLoading, refetch } = useQuery('allProfile', () => fetch('https://arcane-cove-12898.herokuapp.com/profile', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -14,7 +14,7 @@ const Purchase = () => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm({ mode: "onChange" });
 
-    const { data: purchase, isLoading } = useQuery('tools', () => fetch(`http://localhost:5000/purchase/${id}`).then(res => res.json()))
+    const { data: purchase, isLoading } = useQuery('tools', () => fetch(`https://arcane-cove-12898.herokuapp.com/purchase/${id}`).then(res => res.json()))
 
 
     if (isLoading) {
@@ -30,7 +30,7 @@ const Purchase = () => {
             address: data.address,
             price: purchase.price
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://arcane-cove-12898.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
