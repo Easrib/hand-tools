@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 
@@ -29,6 +29,9 @@ const MyOrders = () => {
                 .then(data => setOrders(data))
         }
     }, [user])
+    const handleCancel = ()=>{
+        
+    }
     return (
         <div>
             <h2 className='text-2xl text-primary text-center my-3'>My Orders</h2>
@@ -41,6 +44,8 @@ const MyOrders = () => {
                             <th>Item Name</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
+                            <th>Payment</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,6 +57,17 @@ const MyOrders = () => {
                                     <td>{order.item}</td>
                                     <td>{order.quantity}</td>
                                     <td>{order.quantity * order.price}</td>
+                                    <td>{(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                                        {(order.price && order.paid) && <div>
+                                            <p><span className='text-success'>Paid</span></p>
+                                            <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
+                                        </div>}
+                                    </td>
+                                    <td>{(order.price && !order.paid) && <button onClick={handleCancel} className='btn btn-xs btn-success'>Cancel</button>}
+                                        {(order.price && order.paid) && <div>
+                                            <p><span className='text-success'>Cancel</span></p>
+                                        </div>}
+                                    </td>
                                 </tr>
                             )
                         }

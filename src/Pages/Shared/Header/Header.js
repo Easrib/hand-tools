@@ -11,7 +11,6 @@ const Header = () => {
         localStorage.removeItem('accessToken')
     }
     const menuItems = <>
-        <li><Link to='/about'>About</Link></li>
         <li><Link to='/portfolio'>Portfolio</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
         {
@@ -41,7 +40,7 @@ const Header = () => {
                 </ul>
             </div>
             <div>
-                <label for="myDashboard" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                <label for="myDashboard" class="btn btn-primary drawer-button lg:hidden">Drawer</label>
             </div>
         </div>
     );
